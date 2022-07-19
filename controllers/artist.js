@@ -50,7 +50,9 @@ exports.findUserByName = async (req, res) => {
       return (e.image = image[i]), (e.small_image = small_image[i]);
     });
 
+    // create csv
     writeCSVFile(artistBio, artistName);
+
     // response
     res.status(200).send(artistBio);
   } catch (error) {
