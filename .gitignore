@@ -1,0 +1,4 @@
+node_modules
+database/config.js
+.env
+.idea

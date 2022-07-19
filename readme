@@ -1,0 +1,11 @@
+######################################START##########################################
+##FOLLOW THIS STEPS TO RUN THIS APPLICATION
+a. clone the repository
+b. run npm install to install all the required packages
+c. run the application with this command "nodeno app"
+d. copy the postman documentation link below or open your postman destop or web version to make api request
+e. enter the artist name in query params to search
+f. Note, every artist name you search create a csv file that is located in the download folder of this application.
+g. check the download folder to see csv file 
+
+######################################END##########################################
