@@ -3,6 +3,7 @@ const fs = require("fs");
 dotenv.config();
 const axios = require("axios");
 const converter = require("json-2-csv");
+const Api404Error = require("../errors/error404");
 const { API_KEY } = process.env;
 const { API_BASE_URL } = process.env;
 
@@ -14,8 +15,9 @@ exports.findUserByName = async (req, res) => {
       res.status(404).send({
         success: false,
         artist: "null",
-        message: "Enter an artist name",
+        message: "Enter an artist name in the query params",
       });
+      return;
     }
     let getArtistData = await axios.get(
       `${API_BASE_URL}?method=artist.search&api_key=${API_KEY}&format=json&artist=${artistName}`
@@ -60,9 +62,10 @@ exports.findUserByName = async (req, res) => {
       }
     })();
 
-    // final result
+    // response
     res.status(200).send(artistBio);
   } catch (error) {
     console.log(error);
+    res.status(404).send(new Api404Error());
   }
 };

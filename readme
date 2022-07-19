@@ -2,10 +2,23 @@
 ##FOLLOW THIS STEPS TO RUN THIS APPLICATION
 a. clone the repository
 b. run npm install to install all the required packages
-c. run the application with this command "nodeno app"
-d. copy the postman documentation link below or open your postman destop or web version to make api request
-e. enter the artist name in query params to search
-f. Note, every artist name you search create a csv file that is located in the download folder of this application.
-g. check the download folder to see csv file 
+c. create an .env file and add the config below
+d. run the application with this command "nodeno app"
+e. copy the postman documentation link below or open your postman destop or web version to make api request
+f. enter the artist name in query params to search
+g. Note, every artist name you search create a csv file that is located in the download folder of this application.
+h. check the download folder to see csv file 
+
+add this varibles to your env file
+
+SERVER_PORT = '8001'
+API_BASE_URL = 'http://ws.audioscrobbler.com/2.0/'
+API_KEY = 'c03796b72d516cb204166f85cd6e8843'
+
+postman doc
+https://documenter.getpostman.com/view/17085285/UzQyqNmj
+
+endpoint
+localhost:8001/api/v1/findArtistByName?artistName=Dennis
 
 ######################################END##########################################
