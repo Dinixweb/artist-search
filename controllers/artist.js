@@ -1,9 +1,8 @@
 const dotenv = require("dotenv");
-const fs = require("fs");
 dotenv.config();
 const axios = require("axios");
-const converter = require("json-2-csv");
-const Api404Error = require("../errors/error404");
+const Api404Error = require("../utils/errors/error404");
+const { writeCSVFile } = require("../middleware/csv");
 const { API_KEY } = process.env;
 const { API_BASE_URL } = process.env;
 
@@ -51,17 +50,7 @@ exports.findUserByName = async (req, res) => {
       return (e.image = image[i]), (e.small_image = small_image[i]);
     });
 
-    (async () => {
-      try {
-        const csvData = await converter.json2csvAsync(artistBio);
-
-        // write CSV to a file
-        fs.writeFileSync(`downloads/${artistName}.csv`, csvData);
-      } catch (err) {
-        console.log(err);
-      }
-    })();
-
+    writeCSVFile(artistBio, artistName);
     // response
     res.status(200).send(artistBio);
   } catch (error) {
