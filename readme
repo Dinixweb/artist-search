@@ -3,7 +3,7 @@
 a. clone the repository
 b. run npm install to install all the required packages
 c. create an .env file and add the config below
-d. run the application with this command "nodeno app"
+d. run the application with this command "nodemon app"
 e. copy the postman documentation link below or open your postman destop or web version to make api request
 f. enter the artist name in query params to search
 g. Note, every artist name you search create a csv file that is located in the download folder of this application.
