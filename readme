@@ -4,10 +4,12 @@ a. clone the repository
 b. run npm install to install all the required packages
 c. create an .env file and add the config below
 d. run the application with this command "nodeno app"
-e. copy the postman documentation link below or open your postman destop or web version to make api request
-f. enter the artist name in query params to search
-g. Note, every artist name you search create a csv file that is located in the download folder of this application.
-h. check the download folder to see csv file 
+e. start json server with this command "json-server --watch db.json --p 5000"
+f. copy the postman documentation link below or open your postman destop or web version to make api request
+g. enter the artist name in query params to search
+h. Note, every artist name you search create a csv file that is located in the download folder of this application.
+i. check the download folder to see csv file 
+
 
 add this varibles to your env file
 
