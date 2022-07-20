@@ -28,7 +28,7 @@ exports.findUserByName = async (req, res) => {
     let getArtistJsonDB = [];
     const randomArtist = await axios.get("http://localhost:5000/artist");
     getArtistJsonDB.push(randomArtist.data);
-
+    console.log(randomArtist);
     if (artistBio.length <= 0) {
       res.status(201).send(randomArtist.data);
       return;
