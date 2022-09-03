@@ -28,7 +28,6 @@ exports.findUserByName = async (req, res) => {
     let getArtistJsonDB = [];
     const randomArtist = await axios.get("http://localhost:5000/artist");
     getArtistJsonDB.push(randomArtist.data);
-    console.log(randomArtist);
     if (artistBio.length <= 0) {
       res.status(201).send(randomArtist.data);
       return;
@@ -40,10 +39,8 @@ exports.findUserByName = async (req, res) => {
       artistBio = artistBio.map((list, i) => {
         return Object.keys(list)
           .filter((key) => tableColumn.includes(key))
-          .reduce((obj, key) => {
-            return Object.assign(obj, {
-              [key]: list[key],
-            });
+          .reduce((obj, keys) => {
+            return Object.assign(obj, { [keys]: list[keys] });
           }, {});
       });
 
@@ -66,7 +63,7 @@ exports.findUserByName = async (req, res) => {
         return artistExist.name;
       });
 
-      // inorder to add an artist multiple times
+      // inorder not to add an artist multiple times
       // we do a check to know the artist already exist in the json db
       // else will add the artist
       const artistObj = [];
