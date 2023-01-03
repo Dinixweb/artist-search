@@ -4,7 +4,7 @@ a. clone the repository
 b. run npm install to install all the required packages
 c. create an .env file and add the config below
 d. start json server with this command "json-server --watch db.json --p 5000" 
-e. run the application with this command "nodeno app" (kindly start json server before starting app)
+e. run the application with this command "nodemon app" (kindly start json server before starting app)
 f. copy the postman documentation link below or open your postman destop or web version to make api request
 g. enter the artist name in query params to search
 h. Note, every artist name you search create a csv file that is located in the download folder of this application and add the data to json.db
